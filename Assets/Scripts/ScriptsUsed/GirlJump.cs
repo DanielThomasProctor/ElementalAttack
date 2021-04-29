@@ -5,7 +5,7 @@ using UnityEngine;
 public class GirlJump : MonoBehaviour
 {
 
-    public float jumpHeight = 100f;
+    public float jumpHeight = 500f;
     public bool isGrounded;
     public bool isGrounded1;
     public Rigidbody Girl;
