@@ -10,6 +10,8 @@ TagManager:
   - Flames
   - Enemy
   - WaterJets
+  - Mechanics
+  - Water
   layers:
   - Default
   - TransparentFX
