@@ -45,7 +45,7 @@ public class BoyJump : MonoBehaviour
             {
                 if (Input.GetKey("space"))
                 {
-                    Boy.AddForce(Vector3.up * jumpHeight);
+                    Boy.AddForce(Vector3.up *2* jumpHeight);
                 }
             }
 

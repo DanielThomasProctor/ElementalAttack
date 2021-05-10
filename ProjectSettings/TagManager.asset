@@ -12,6 +12,7 @@ TagManager:
   - WaterJets
   - Mechanics
   - Water
+  - PlayerMovement
   layers:
   - Default
   - TransparentFX
