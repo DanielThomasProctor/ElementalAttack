@@ -52,33 +52,11 @@ public class AttackingTheBoss : MonoBehaviour
             Destroy(this.gameObject);
                     
                         
-            }
-
-
         }
-        IEnumerator Wait(float Wait1)
-        {
-            yield return new WaitForSeconds(2);
-            ;
-        }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     }
+
+
+}
 

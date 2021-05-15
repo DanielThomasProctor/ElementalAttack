@@ -7,7 +7,7 @@ public class FiringTheTurret : MonoBehaviour
     public GameObject Arrow;
     const float speed = 3000f;
     float fireDelay = 3f;
-   
+    AmmoForTurret Ammo;
 
 
     float Delay;
@@ -22,7 +22,7 @@ public class FiringTheTurret : MonoBehaviour
     /// </summary>
     private void Start()
     {
-
+        Ammo = GameObject.FindGameObjectWithTag("Mechanics").GetComponent<AmmoForTurret>();
 
     }
 
@@ -31,7 +31,7 @@ public class FiringTheTurret : MonoBehaviour
     void Update()
     {
   
-        if (Input.GetButton("Fire1") && Time.time > Delay)
+        if (Input.GetButton("Fire1") && Time.time > Delay && Ammo.ammo >0)
         {
             Delay = Time.time + fireDelay;
             GameObject shotInstance = Instantiate(Arrow, transform.position, transform.rotation);
