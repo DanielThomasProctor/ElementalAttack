@@ -28,7 +28,7 @@ public class AttackingTheBoss : MonoBehaviour
         {
 
          
-            Debug.Log("Prijectile collided");
+            Debug.Log("Projectile collided");
 
 
                
@@ -40,17 +40,17 @@ public class AttackingTheBoss : MonoBehaviour
                             Debug.Log("Dead");
 
 
-                //// end cutscene
+               
                         }
                         else
                         {
                             health.BarFill -= 5;
 
-                            Debug.Log("TickDown");
+                            Debug.Log("-5");
                         }
-
-
-                        health.Border.SetBar(health.BarFill);
+            health.Border.SetBar(health.BarFill);
+            Destroy(this.gameObject);
+                    
                         
             }
 

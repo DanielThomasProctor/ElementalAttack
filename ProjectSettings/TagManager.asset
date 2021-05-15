@@ -13,6 +13,7 @@ TagManager:
   - Mechanics
   - Water
   - PlayerMovement
+  - Boss
   layers:
   - Default
   - TransparentFX
