@@ -8,6 +8,7 @@ public class FeatherTally : MonoBehaviour
     public int FeathersUsed;
     public int Percent;
     public Text text;
+    public Text feathers2;
 
     /// ////////////////////////////ULTIMATE BAR SECTIONS/////////////////////
     public GameObject Segment1;
@@ -36,6 +37,7 @@ public class FeatherTally : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        feathers2.text = Feathers.ToString();
         Percent = (Feathers - FeathersUsed) * 10;
         text.text = (Percent.ToString() + "%");
         if (Percent == 0)

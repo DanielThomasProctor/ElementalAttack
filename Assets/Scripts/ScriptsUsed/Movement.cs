@@ -13,7 +13,11 @@ public class Movement : MonoBehaviour
     public float TimeToSwitch = 100f;
     public Camera CameraBoy;
     public Camera CameraGirl;
-   
+    /// <summary>
+    /// ////////////////////////////////////////////////
+    /// </summary>
+    public GameObject speedIcon;
+    public GameObject flameIcon;
 
     public float jumpHeight = 100f;
     public bool isGrounded;
@@ -96,6 +100,8 @@ public class Movement : MonoBehaviour
                 Girl.transform.Rotate(0, Input.GetAxis("Mouse X"), 0);
                 CameraGirl.enabled = true;
                 CameraBoy.enabled = false;
+                speedIcon.SetActive(true);
+                flameIcon.SetActive(false);
                 
             }
             if (Boss.Bossfight == true)
@@ -104,6 +110,8 @@ public class Movement : MonoBehaviour
                 CameraGirl.enabled = false;
                 CameraBoy.enabled = false;
                 WaterTurret.enabled = true;
+                speedIcon.SetActive(true);
+                flameIcon.SetActive(false);
 
             }
         }
@@ -116,6 +124,8 @@ public class Movement : MonoBehaviour
                 CameraGirl.enabled = false;
                 CameraBoy.enabled = true;
                 WaterTurret.enabled = false;
+                speedIcon.SetActive(false);
+                flameIcon.SetActive(true);
 
             }
         }
