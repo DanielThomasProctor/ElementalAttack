@@ -21,6 +21,22 @@ public class Movement : MonoBehaviour
 
     float SpeedBoost = 1;
 
+
+
+    /// <summary>
+    /// ///////////////////////////////Boss/////////////////////
+    /// </summary>
+    BossMechanics Boss;
+    public Camera WaterTurret;
+    public Rigidbody GirlBoss;
+
+
+
+
+
+
+
+
     void Awake()
     {
     }
@@ -29,7 +45,9 @@ public class Movement : MonoBehaviour
     {
         CameraGirl.enabled = true;
         CameraBoy.enabled = false;
-        
+        WaterTurret.enabled = false;
+        Boss = GameObject.FindGameObjectWithTag("Mechanics").GetComponent<BossMechanics>();
+
     }
     void Update()
     {
@@ -67,6 +85,7 @@ public class Movement : MonoBehaviour
 
         if (Switch == true)
         {
+            if (Boss.Bossfight == false)
             {
                 if (Input.GetKeyDown(KeyCode.E))
                 {
@@ -79,6 +98,14 @@ public class Movement : MonoBehaviour
                 CameraBoy.enabled = false;
                 
             }
+            if (Boss.Bossfight == true)
+            {
+                GirlBoss.transform.Rotate(0, Input.GetAxis("Mouse X"), 0);
+                CameraGirl.enabled = false;
+                CameraBoy.enabled = false;
+                WaterTurret.enabled = true;
+
+            }
         }
         if (Switch == false)
         {
@@ -88,7 +115,7 @@ public class Movement : MonoBehaviour
                 Boy.transform.Rotate(0, Input.GetAxis("Mouse X"), 0);
                 CameraGirl.enabled = false;
                 CameraBoy.enabled = true;
-                
+                WaterTurret.enabled = false;
 
             }
         }

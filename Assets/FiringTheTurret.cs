@@ -36,7 +36,7 @@ public class FiringTheTurret : MonoBehaviour
             Delay = Time.time + fireDelay;
             GameObject shotInstance = Instantiate(Arrow, transform.position, transform.rotation);
             shotInstance.GetComponent<Rigidbody>().AddForce((transform.forward *4*  speed));
-
+            Ammo.ammo -= 1;
 
         }
        

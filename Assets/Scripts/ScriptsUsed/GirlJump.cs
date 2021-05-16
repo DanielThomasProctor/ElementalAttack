@@ -27,13 +27,14 @@ public class GirlJump : MonoBehaviour
     /// /////////////////////////////////////
     /// </summary>
     private bool canDoubleJump;
-
+    BossMechanics Boss;
 
     public GameObject Water;
     public bool waterCheck;
     // Start is called before the first frame update
     void Start()
     {//////////////////
+        Boss = GameObject.FindGameObjectWithTag("Mechanics").GetComponent<BossMechanics>();
         WhichPlayer_script = Whichplayer.GetComponent<Movement>();
         Water.SetActive(false);
     }
@@ -44,32 +45,38 @@ public class GirlJump : MonoBehaviour
         Movement1 = WhichPlayer_script.horizontal;
         Switch1 = WhichPlayer_script.Switch;
 
-        if (Switch1 == true)
-        {
-            
-            if (Input.GetKeyDown(KeyCode.Space))
+        if (Boss.Bossfight == false) {
+            if (Switch1 == true)
             {
-                if (isGrounded == true)
-                {
-                    Girl.AddForce(Vector3.up * jumpHeight);
-                    Debug.Log("Jump");
-                }
-                else
-                {
-                    if (canDoubleJump == true)
-                    {
-                        Water.SetActive(true);
-                        Girl.AddForce(Vector3.up * jumpHeight);
-                        canDoubleJump = false;
-                        Debug.Log("Jump2");
-                    }
-                }
-                
 
-            }
-            
+                if (Input.GetKeyDown(KeyCode.Space))
+                {
+                    if (isGrounded == true)
+                    {
+                        Girl.AddForce(Vector3.up * jumpHeight);
+                        Debug.Log("Jump");
+                    }
+                    else
+                    {
+                        if (canDoubleJump == true)
+                        {
+                            Water.SetActive(true);
+                            Girl.AddForce(Vector3.up * jumpHeight);
+                            canDoubleJump = false;
+                            Debug.Log("Jump2");
+                        }
+                    }
+
+
+                }
+
 
             } 
+        }
+        else
+        {
+
+        }
     }
         void OnCollisionEnter(Collision other)
         {
