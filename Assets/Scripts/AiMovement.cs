@@ -11,15 +11,15 @@ public class AiMovement : MonoBehaviour
     private int distanceFromLoctaion = 0;
     private NavMeshAgent enemy;
     public GameObject ChaseTrigger;
+    PlayerHealth PlayerHealth1;
+    public bool a;
 
-
-    
     void Start()
     {
 
-
+        PlayerHealth1 = GameObject.FindGameObjectWithTag("Mechanics").GetComponent<PlayerHealth>();
         enemy = GetComponent<NavMeshAgent>();
-
+        a = false;
         //allows continuus movement
         enemy.autoBraking = false;
         ChaseTrigger.SetActive(false);
@@ -50,36 +50,67 @@ public class AiMovement : MonoBehaviour
         float angle2 = Vector3.Angle(transform.forward, dirToPlayer2);
         if (distance < 25 && Mathf.Abs(angle1) < 90 && Mathf.Abs(angle1) < 270)
         {
-            
-            Vector3 newPos = transform.position -  dirToPlayer;
-            ChaseTrigger.SetActive(true);
+
+            Vector3 newPos = transform.position - dirToPlayer;
+            //ChaseTrigger.SetActive(true);
             enemy.SetDestination(newPos);
         }
-        else if ((distance < 25 &&Mathf.Abs(angle1)<90 && Mathf.Abs(angle1) < 270)|| distance < 15)
-        {
-             
-                Vector3 newPos = transform.position -  dirToPlayer2;
-            ChaseTrigger.SetActive(true);
-            enemy.SetDestination(newPos);
-           
-
-
-            }
-        else if ((distance2 < 25 && Mathf.Abs(angle2) < 90 && Mathf.Abs(angle2) < 270) || distance2 < 15)
+        else if ((distance < 25 && Mathf.Abs(angle1) < 90 && Mathf.Abs(angle1) < 270) || distance < 15)
         {
 
             Vector3 newPos = transform.position - dirToPlayer2;
-            ChaseTrigger.SetActive(true);
+           // ChaseTrigger.SetActive(true);
+           // a = true;
             enemy.SetDestination(newPos);
 
+
+
         }
-        else if (!enemy.pathPending && enemy.remainingDistance < 0.5f && ChaseTrigger== true)
+        else if ((distance2 < 25 && Mathf.Abs(angle2) < 90 && Mathf.Abs(angle2) < 270) || distance2 < 15)
+        {
+            
+             Vector3 newPos = transform.position - dirToPlayer2;
+           // ChaseTrigger.SetActive(true);
+           // a = true;
+            enemy.SetDestination(newPos);
+            
+
+        }
+        else if (!enemy.pathPending && enemy.remainingDistance < 10f )
+        {
+            //start explosion
+            Debug.Log("lets expload");
+           // Debug.Log(enemy.remainingDistance.ToString());
+           // StartCoroutine(Explosion12(1.0F));
+
+        }
+
+
+        else if (!enemy.pathPending && enemy.remainingDistance < 2f )
+            NextLocation();
+    }
+    IEnumerator Explosion123(float Explosion1)
+    {
+        Debug.Log("waiting");
+        yield return new WaitForSeconds(2);
+        Debug.Log("waited");
+        if (enemy.remainingDistance < 10f)
+        {
+            PlayerHealth1.BarFill -= 25;
+        }
+        else if(enemy.remainingDistance < 15f)
+        {
+            PlayerHealth1.BarFill -= 10;
+        }
+        else if (enemy.remainingDistance < 20f)
+        {
+            PlayerHealth1.BarFill -= 5;
+        }
+        else
         {
 
         }
-           
-
-        else if (!enemy.pathPending && enemy.remainingDistance < 3f)
-            NextLocation();
+        a = false;
+        Destroy(this.gameObject);
     }
 }

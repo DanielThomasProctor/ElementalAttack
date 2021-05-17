@@ -28,7 +28,7 @@ public class AiTrigger : MonoBehaviour
     {
         if (other.gameObject.tag == "Flames"|| other.gameObject.tag == "Water")
         {
-            Debug.Log("enemy trigger deactivated");
+           Debug.Log("enemy trigger deactivated");
             Trig.ChaseTrigger.SetActive(false);
             this.gameObject.SetActive(false);
         }

@@ -14857,36 +14857,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 5ac5831a4705b70489955062116ed0e6, type: 3}
---- !u!1 &594467072
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 594467073}
-  m_Layer: 0
-  m_Name: Area Light
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &594467073
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 594467072}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1783042249}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!4 &594580779 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 4dc79254d7e05f44f94ace50ba018477,
@@ -27254,7 +27224,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 437352, guid: 2813f18062e255a4aa5723d7a214a18c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -93.4648
+      value: -134.3
       objectReference: {fileID: 0}
     - target: {fileID: 437352, guid: 2813f18062e255a4aa5723d7a214a18c, type: 3}
       propertyPath: m_LocalPosition.y
@@ -40139,7 +40109,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 439422, guid: dd95ee52b2d3a914baa7f842b3cf7592, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -85.31586
+      value: -76.4
       objectReference: {fileID: 0}
     - target: {fileID: 439422, guid: dd95ee52b2d3a914baa7f842b3cf7592, type: 3}
       propertyPath: m_LocalPosition.y
@@ -44140,6 +44110,7 @@ MonoBehaviour:
   - {fileID: 276005141}
   - {fileID: 1401473285}
   ChaseTrigger: {fileID: 473766222}
+  a: 0
 --- !u!195 &1783042252
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -54196,6 +54167,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Constraints
       value: 112
+      objectReference: {fileID: 0}
+    - target: {fileID: 1489274141443279405, guid: aac9d4fe75cb167488d65dc7325ffa93,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2050077455740013679, guid: aac9d4fe75cb167488d65dc7325ffa93,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2491993516425092382, guid: aac9d4fe75cb167488d65dc7325ffa93,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aac9d4fe75cb167488d65dc7325ffa93, type: 3}
