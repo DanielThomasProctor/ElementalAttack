@@ -14,7 +14,7 @@ public class ULT : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       // player = GameObject.FindGameObjectWithTag("Player").transform;
+       
         Feather = GameObject.FindGameObjectWithTag("Mechanics").GetComponent<FeatherTally>();
         Move= GameObject.FindGameObjectWithTag("PlayerMovement").GetComponent<Movement>();
     }
@@ -25,7 +25,7 @@ public class ULT : MonoBehaviour
         if (Feather.Percent >= 100) {
             if (Input.GetKey("g") && Move.Switch == true ) {
                 Debug.Log("Greater than 100");
-                // playerposition = new Vector3(player.position.x + 140, player.position.y + -3, player.position.z + 140);
+               
                 Instantiate(Ult2, (player2.transform.position + player2.transform.forward * 8 - player2.transform.up), (player2.transform.rotation * Quaternion.Euler(0f, 180f, 0f)));
                 Debug.Log("Made object");
                 Feather.FeathersUsed = 10;
@@ -35,7 +35,7 @@ public class ULT : MonoBehaviour
             {
                 
                     Debug.Log("Greater than 100");
-                    // playerposition = new Vector3(player.position.x + 140, player.position.y + -3, player.position.z + 140);
+                   
                     Instantiate(Ult, (player.transform.position + player.transform.forward * 8 - player.transform.up), (player.transform.rotation * Quaternion.Euler(0f, 180f, 0f)));
                     Debug.Log("Made object");
                     Feather.FeathersUsed = 10;

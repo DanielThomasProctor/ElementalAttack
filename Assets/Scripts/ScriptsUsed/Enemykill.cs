@@ -36,7 +36,7 @@ public class Enemykill : MonoBehaviour
 
         IEnumerator MeltTime(float MeltTime1)
         {
-            yield return new WaitForSeconds(3);
+            yield return new WaitForSeconds(1);
 
             Destroy(gameObject);
 
@@ -62,7 +62,7 @@ public class Enemykill : MonoBehaviour
 
         IEnumerator MeltTime(float MeltTime1)
         {
-            yield return new WaitForSeconds(3);
+            yield return new WaitForSeconds(1);
 
             Destroy(gameObject);
 

@@ -93,7 +93,7 @@ public class Movement : MonoBehaviour
             {
                 if (Input.GetKeyDown(KeyCode.E))
                 {
-                    SpeedBoost = 5;
+                    SpeedBoost = 3;
                     StartCoroutine(SpeedBoostwait(20000.0F));
                 }
                     Girl.transform.Translate((horizontal*SpeedBoost), 0, (vertical* SpeedBoost));
