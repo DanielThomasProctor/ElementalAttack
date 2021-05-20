@@ -28,7 +28,7 @@ public class ULT : MonoBehaviour
                
                 Instantiate(Ult2, (player2.transform.position + player2.transform.forward * 8 - player2.transform.up), (player2.transform.rotation * Quaternion.Euler(0f, 180f, 0f)));
                 Debug.Log("Made object");
-                Feather.FeathersUsed = 10;
+                Feather.FeathersUsed += 10;
                 Debug.Log("minus 10");
             }
             else if(Input.GetKey("g") && Move.Switch == false)
@@ -38,7 +38,7 @@ public class ULT : MonoBehaviour
                    
                     Instantiate(Ult, (player.transform.position + player.transform.forward * 8 - player.transform.up), (player.transform.rotation * Quaternion.Euler(0f, 180f, 0f)));
                     Debug.Log("Made object");
-                    Feather.FeathersUsed = 10;
+                    Feather.FeathersUsed += 10;
                     Debug.Log("minus 10");
                  
             }

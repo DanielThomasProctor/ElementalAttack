@@ -8,10 +8,13 @@ public class AiKaboom : MonoBehaviour
     public bool KillZone1;
     public bool KillZone2;
     public bool KillZone3;
+    public GameObject flames;
+
     // Start is called before the first frame update
     void Start()
     {
         PlayerHealth1 = GameObject.FindGameObjectWithTag("Mechanics").GetComponent<PlayerHealth>();
+        flames.SetActive(false);
     }
 
     // Update is called once per frame
@@ -30,6 +33,7 @@ public class AiKaboom : MonoBehaviour
     }
     IEnumerator Explosion12(float Explosion1)
     {
+        flames.SetActive(true);
         Debug.Log("waiting");
         yield return new WaitForSeconds(4);
         if (KillZone1 == true)

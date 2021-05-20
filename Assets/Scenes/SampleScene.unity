@@ -6975,6 +6975,7 @@ MonoBehaviour:
   BossStartPos: {fileID: 852667560}
   Player: {fileID: 2031299657}
   speach: {fileID: 551999775}
+  BossHealthBar: {fileID: 1555323490}
 --- !u!135 &320469664
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -14182,6 +14183,7 @@ MonoBehaviour:
   Location12: {fileID: 1582628868}
   number: 0
   a: 0
+  isActive: 0
   ArrowDrop: {fileID: 1843634616851353230, guid: 61dfa28bfadee9244ade5baf7cdf0b33,
     type: 3}
 --- !u!114 &568230091
@@ -50254,6 +50256,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1977531533}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1980995871 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2242176795932036257, guid: aac9d4fe75cb167488d65dc7325ffa93,
+    type: 3}
+  m_PrefabInstance: {fileID: 47343596534782730}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1993137935
 GameObject:
   m_ObjectHideFlags: 0
@@ -54396,11 +54404,21 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 2242176795931769839, guid: aac9d4fe75cb167488d65dc7325ffa93,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 2491993516425092382, guid: aac9d4fe75cb167488d65dc7325ffa93,
         type: 3}
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 6894078901525116232, guid: aac9d4fe75cb167488d65dc7325ffa93,
+        type: 3}
+      propertyPath: flames
+      value: 
+      objectReference: {fileID: 1980995871}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aac9d4fe75cb167488d65dc7325ffa93, type: 3}
 --- !u!1001 &2755213972530192330
