@@ -38,7 +38,7 @@ public class Movement : MonoBehaviour
 
 
 
-
+    HealingFountain Healings;
 
 
     void Awake()
@@ -51,7 +51,7 @@ public class Movement : MonoBehaviour
         CameraBoy.enabled = false;
         WaterTurret.enabled = false;
         Boss = GameObject.FindGameObjectWithTag("Mechanics").GetComponent<BossMechanics>();
-
+        Healings = GameObject.FindGameObjectWithTag("HealingFountain").GetComponent<HealingFountain>();
     }
     void Update()
     {
@@ -63,6 +63,7 @@ public class Movement : MonoBehaviour
             {
 
                 Switch = false;
+                Healings.healing = false;
                 SwitchDelay = Time.time + TimeToSwitch;
                 Debug.Log("Water Girl at the ready");
                
@@ -71,7 +72,7 @@ public class Movement : MonoBehaviour
             }
             else if (Switch == false)
             {
-
+                Healings.healing = false;
                 Switch = true;
                 SwitchDelay = Time.time + TimeToSwitch;
               

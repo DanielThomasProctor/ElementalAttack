@@ -15,6 +15,8 @@ TagManager:
   - PlayerMovement
   - Boss
   - Triggers
+  - Lava
+  - HealingFountain
   layers:
   - Default
   - TransparentFX
