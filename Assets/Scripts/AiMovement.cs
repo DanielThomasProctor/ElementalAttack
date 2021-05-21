@@ -86,7 +86,7 @@ public class AiMovement : MonoBehaviour
         }
 
 
-        else if (!enemy.pathPending && enemy.remainingDistance < 2f )
+        else if (!enemy.pathPending && enemy.remainingDistance < 15f )
             NextLocation();
     }
     IEnumerator Explosion123(float Explosion1)
