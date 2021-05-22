@@ -5,15 +5,15 @@ using UnityEngine;
 public class AiKaboom : MonoBehaviour
 {
     PlayerHealth PlayerHealth1;
-    public bool KillZone1;
-    public bool KillZone2;
-    public bool KillZone3;
+    
+    BolwingUpThePlayer PlayerHealth12;
     public GameObject flames;
 
     // Start is called before the first frame update
     void Start()
     {
         PlayerHealth1 = GameObject.FindGameObjectWithTag("Mechanics").GetComponent<PlayerHealth>();
+        PlayerHealth12 = GameObject.FindGameObjectWithTag("Mechanics").GetComponent<BolwingUpThePlayer>();
         flames.SetActive(false);
     }
 
@@ -36,23 +36,37 @@ public class AiKaboom : MonoBehaviour
         flames.SetActive(true);
         Debug.Log("waiting");
         yield return new WaitForSeconds(4);
-        if (KillZone1 == true)
+        Debug.Log("Damage");
+        if (PlayerHealth12.KillZone1 == true)
         {
+            Debug.Log("killz1");
             PlayerHealth1.BarFill -= 15;
         }
-        else if (KillZone2 == true)
-        {
-            PlayerHealth1.BarFill -= 10;
+        else {
+            if (PlayerHealth12.KillZone2 == true)
+            {
+                Debug.Log("killz2");
+                PlayerHealth1.BarFill -= 10;
+            }
+            else {
+                 if (PlayerHealth12.KillZone3 == true)
+                {
+                    Debug.Log("killz3");
+                    PlayerHealth1.BarFill -= 5;
+                }
+                else
+                {
+
+                }
+            }
         }
-        else if (KillZone3 == true)
-        {
-            PlayerHealth1.BarFill -= 5;
-        }
-        KillZone1 = false;
-        KillZone2 = false;
-        KillZone3 = false;
+       
+        
+        PlayerHealth12.KillZone1 = false;
+        PlayerHealth12.KillZone2 = false;
+        PlayerHealth12.KillZone3 = false;
         Debug.Log("waited");
-        yield return new WaitForSeconds(1);
+        
         Destroy(this.gameObject);
     }
 }

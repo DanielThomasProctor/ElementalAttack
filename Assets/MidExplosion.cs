@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class MidExplosion : MonoBehaviour
 {
-    AiKaboom Enemy;
+    BolwingUpThePlayer Enemy;
     // Start is called before the first frame update
     void Start()
     {
-        Enemy = GameObject.FindGameObjectWithTag("Enemy").GetComponent<AiKaboom>();
+        Enemy = GameObject.FindGameObjectWithTag("Mechanics").GetComponent<BolwingUpThePlayer>();
     }
 
     // Update is called once per frame
