@@ -39,7 +39,7 @@ public class Movement : MonoBehaviour
 
 
     HealingFountain Healings;
-
+    public float Delay;
 
     void Awake()
     {
@@ -92,14 +92,17 @@ public class Movement : MonoBehaviour
         {
             if (Boss.Bossfight == false)
             {
-                if (Input.GetKeyDown(KeyCode.E))
+                if (Input.GetKeyDown(KeyCode.E)&& Time.time > Delay)
                 {
-                    SpeedBoost = 3;
+                    Delay = Time.time + 3;
+                    SpeedBoost = 2;
                     StartCoroutine(SpeedBoostwait(20000.0F));
                 }
                     Girl.transform.Translate((horizontal*SpeedBoost), 0, (vertical* SpeedBoost));
                 Girl.transform.Rotate(0, Input.GetAxis("Mouse X"), 0);
+                
                 CameraGirl.enabled = true;
+                CameraGirl.transform.Rotate(-Input.GetAxis("Mouse Y"), 0, 0);
                 CameraBoy.enabled = false;
                 speedIcon.SetActive(true);
                 flameIcon.SetActive(false);
@@ -124,6 +127,7 @@ public class Movement : MonoBehaviour
                 Boy.transform.Rotate(0, Input.GetAxis("Mouse X"), 0);
                 CameraGirl.enabled = false;
                 CameraBoy.enabled = true;
+                CameraBoy.transform.Rotate(-Input.GetAxis("Mouse Y"), 0, 0);
                 WaterTurret.enabled = false;
                 speedIcon.SetActive(false);
                 flameIcon.SetActive(true);
@@ -133,7 +137,7 @@ public class Movement : MonoBehaviour
 
         IEnumerator SpeedBoostwait(float SpeedBoostwait1)
         {
-            yield return new WaitForSeconds(3);
+            yield return new WaitForSeconds(1);
 
             SpeedBoost = 1;
 

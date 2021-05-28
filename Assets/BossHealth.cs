@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 public class BossHealth : MonoBehaviour
 {
 
@@ -21,7 +22,10 @@ public class BossHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
+       if (BarFill<=0)
+        {
+            SceneManager.LoadScene("Victory");
+        }
 
         Border.SetBar(BarFill);
     }

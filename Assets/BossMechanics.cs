@@ -36,7 +36,7 @@ public class BossMechanics : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Delay = 21f;
+        Delay = 16f;
         speed = 1000f;
         Bossfight = false;
         DragonLeft.SetActive(false);
@@ -107,7 +107,7 @@ public class BossMechanics : MonoBehaviour
         DragonLeftStatue1.SetActive(false);
         DragonLeftStatue2.SetActive(false);
         trigger1.SetActive(false);
-        yield return new WaitForSeconds(10);
+        yield return new WaitForSeconds(4);
         DragonLeft.SetActive(false);
         Debug.Log("Time to switch");
         Dragonnumber = 2;
@@ -131,7 +131,7 @@ public class BossMechanics : MonoBehaviour
         DragonRightStatue1.SetActive(false);
         DragonRightStatue2.SetActive(false);
         trigger2.SetActive(false);
-        yield return new WaitForSeconds(10);
+        yield return new WaitForSeconds(4);
         DragonRight.SetActive(false);
         Debug.Log("Time to switch");
         Dragonnumber = 3;
@@ -155,7 +155,7 @@ public class BossMechanics : MonoBehaviour
         DragonMiddleStatue1.SetActive(false);
         DragonMiddleStatue2.SetActive(false);
         trigger3.SetActive(false);
-        yield return new WaitForSeconds(10);
+        yield return new WaitForSeconds(4);
         DragonMiddle.SetActive(false);
         Debug.Log("Time to switch");
         Dragonnumber = 1;

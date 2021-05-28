@@ -24,7 +24,10 @@ public class Boss : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Feather.Feathers < 20)
+        {
+            speach.text = (("You have ")+ (Feather.Feathers) + ("/20 required there are ")+ (30 - (Feather.Feathers)) +(" stil around the map")).ToString();
+        }
     }
     void OnTriggerEnter(Collider other)
     {
@@ -33,7 +36,7 @@ public class Boss : MonoBehaviour
 
             if (Feather.Feathers <20)
             {
-                speach.text = ("I can not grant you passage until you have collected enough feathers of fate to grant you safe passage").ToString();
+                speach.text = ("I can not grant you passage until you have collected enough feathers of fate to grant you safe passage.").ToString();
             }
             else if (Feather.Feathers >= 20)
             {

@@ -55,7 +55,7 @@ public class AiMovement : MonoBehaviour
             //ChaseTrigger.SetActive(true);
             enemy.SetDestination(newPos);
         }
-        else if ((distance < 25 && Mathf.Abs(angle1) < 90 && Mathf.Abs(angle1) < 270) || distance < 15)
+        else if ((distance < 25 && Mathf.Abs(angle1) < 90 && Mathf.Abs(angle1) < 270) || distance < 20)
         {
 
             Vector3 newPos = transform.position - dirToPlayer2;
@@ -66,13 +66,14 @@ public class AiMovement : MonoBehaviour
 
 
         }
-        else if ((distance2 < 25 && Mathf.Abs(angle2) < 90 && Mathf.Abs(angle2) < 270) || distance2 < 15)
+        else if ((distance2 < 25 && Mathf.Abs(angle2) < 90 && Mathf.Abs(angle2) < 270) || distance2 < 20)
         {
             
              Vector3 newPos = transform.position - dirToPlayer2;
            // ChaseTrigger.SetActive(true);
            // a = true;
             enemy.SetDestination(newPos);
+            
             
 
         }
