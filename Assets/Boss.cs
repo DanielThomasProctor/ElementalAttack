@@ -24,10 +24,11 @@ public class Boss : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Feather.Feathers < 20)
+        if (BossMec.Bossfight == false)
         {
-            speach.text = (("You have ")+ (Feather.Feathers) + ("/20 required there are ")+ (30 - (Feather.Feathers)) +(" stil around the map")).ToString();
+            speach.text = (("You have ") + (Feather.Feathers) + ("/20 required there are ") + (30 - (Feather.Feathers)) + (" stil around the map")).ToString();
         }
+        
     }
     void OnTriggerEnter(Collider other)
     {
